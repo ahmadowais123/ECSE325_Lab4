@@ -11,8 +11,8 @@ end g01_FIR_Broadcast;
 
 architecture implementation of g01_FIR_Broadcast is
 signal x_internal : signed(15 downto 0);
-signal m0,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16,m17,m18,m19,m20,m21,m22,m23,m24 : signed(31 downto 0);
-signal y0,y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20,y21,y22,y23,y24 : signed(31 downto 0);
+signal m0,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16,m17,m18,m19,m20,m21,m22,m23,m24 : signed(31 downto 0) := (others => '0');
+signal y0,y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20,y21,y22,y23,y24 : signed(31 downto 0) := (others => '0');
 
 constant weight01 : signed(15 downto 0) := "0000001001110011";
 constant weight02 : signed(15 downto 0) := "0000000000010001";
@@ -44,57 +44,6 @@ begin
 FIR_process: process(clk, rst)
 	begin
 		if rst = '1' then
-			y24 <= (others => '0'); 
-			y23 <= (others => '0'); 
-			y22 <= (others => '0'); 
-			y21 <= (others => '0'); 
-			y20 <= (others => '0'); 
-			y19 <= (others => '0'); 
-			y18 <= (others => '0'); 
-			y17 <= (others => '0'); 
-			y16 <= (others => '0'); 
-			y15 <= (others => '0'); 
-			y14 <= (others => '0'); 
-			y13 <= (others => '0'); 
-			y12 <= (others => '0');
-			y11 <= (others => '0');  
-			y10 <= (others => '0'); 
-			y9 <= (others => '0');
-			y8 <= (others => '0'); 
-			y7 <= (others => '0'); 
-			y6 <= (others => '0'); 
-			y5 <= (others => '0'); 
-			y4 <= (others => '0'); 
-			y3 <= (others => '0'); 
-			y2 <= (others => '0'); 
-			y1 <= (others => '0'); 
-			y0 <= (others => '0');
-
-			m24 <= (others => '0');
-			m23 <= (others => '0');
-			m22 <= (others => '0');
-			m21 <= (others => '0');
-			m20 <= (others => '0');
-			m19 <= (others => '0');
-			m18 <= (others => '0');
-			m17 <= (others => '0');
-			m16 <= (others => '0');
-			m15 <= (others => '0');
-			m14 <= (others => '0');
-			m13 <= (others => '0');
-			m12 <= (others => '0');
-			m11 <= (others => '0');
-			m10 <= (others => '0');
-			m9 <= (others => '0');
-			m8 <= (others => '0');
-			m7 <= (others => '0');
-			m6 <= (others => '0');
-			m5 <= (others => '0');
-			m4 <= (others => '0');
-			m3 <= (others => '0');
-			m2 <= (others => '0');
-			m1 <= (others => '0');
-			m0 <= (others => '0'); 
 
 			y <= (others => '0');
 			x_internal <= (others => '0');
